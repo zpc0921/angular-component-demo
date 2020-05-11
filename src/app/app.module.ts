@@ -9,12 +9,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { TodoTasksComponent } from './todo-tasks/todo-tasks.component';
+import { TaskCardComponent } from './todo-tasks/task-card/task-card.component';
+import { TaskConfigComponent } from './todo-tasks/task-config/task-config.component';
 
 registerLocaleData(zh);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoTasksComponent,
+    TaskCardComponent,
+    TaskConfigComponent,
   ],
   imports: [
     BrowserModule,
