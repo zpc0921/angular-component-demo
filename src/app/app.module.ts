@@ -21,7 +21,7 @@ registerLocaleData(zh);
   declarations: [
     AppComponent,
     ChangeElementStyleDirective,
-    TestChangeElementColorDirectiveComponent
+    TestChangeElementColorDirectiveComponent,
     AppComponent,
     TodoTasksComponent,
     TaskCardComponent,
