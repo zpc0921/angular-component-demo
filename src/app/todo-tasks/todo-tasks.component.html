@@ -1,1 +1,6 @@
-<p>todo-tasks works!</p>
+<div class="wrapper">
+  <app-task-config [tasks]="tasks"></app-task-config>
+  <app-task-card *ngFor="let task of tasks"
+                 [task]="task"
+  ></app-task-card>
+</div>

@@ -1,19 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TaskModel} from '../task.model';
 
 @Component({
   selector: 'app-task-config',
   template: `
-    <p>
-      task-config works!
-    </p>
+    <div style="width: 500px">
+      <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
+        <input type="text" nz-input [(ngModel)]="inputValue"/>
+      </nz-input-group>
+      <ng-template #addOnBeforeTemplate>
+        <nz-select [(ngModel)]="selectTask" style="width: 100px" nzPlaceHolder="选择任务"
+                   (ngModelChange)="slectChange($event)">
+          <nz-option *ngFor="let task of tasks"
+                     [nzLabel]="task.id"
+                     [nzValue]="task.id"
+          ></nz-option>
+        </nz-select>
+      </ng-template>
+      <ng-template #addOnAfterTemplate>
+        <button nz-button nzType="primary" nzSize="small" nzSearch (click)="saveTitle(inputValue)">修改</button>
+      </ng-template>
+    </div>
   `,
   styles: []
 })
 export class TaskConfigComponent implements OnInit {
+  @Input() tasks: TaskModel[];
+  selectTask: TaskModel;
+  inputValue: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  saveTitle(inputValue: string) {
+    
+  }
+
+  slectChange($event: any) {
+    console.log($event)
+    this.inputValue = this.selectTask.title;
+  }
 }

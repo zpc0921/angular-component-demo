@@ -10,10 +10,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {ChangeElementStyleDirective} from './directives/change-element-style.directive';
-import {TestChangeElementColorDirectiveComponent} from './components/test-change-element-color-directive/test-change-element-color-directive.component';
 import {TodoTasksComponent} from './todo-tasks/todo-tasks.component';
 import {TaskCardComponent} from './todo-tasks/task-card/task-card.component';
 import {TaskConfigComponent} from './todo-tasks/task-config/task-config.component';
+import {LuckyGridComponent} from './find-lucky/lucky-grid/lucky-grid.component';
+import {FindLuckyComponent} from './find-lucky/find-lucky.component';
+import {TestChangeElementColorDirectiveComponent} from './components/test-change-element-color-directive/test-change-element-color-directive.component';
 
 registerLocaleData(zh);
 
@@ -26,6 +28,8 @@ registerLocaleData(zh);
     TodoTasksComponent,
     TaskCardComponent,
     TaskConfigComponent,
+    LuckyGridComponent,
+    FindLuckyComponent,
   ],
   imports: [
     BrowserModule,
