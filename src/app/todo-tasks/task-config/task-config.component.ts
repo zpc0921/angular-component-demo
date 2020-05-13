@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TaskModel} from '../task.model';
+import {TaskService} from '../task.service';
 
 @Component({
   selector: 'app-task-config',
@@ -9,7 +10,7 @@ import {TaskModel} from '../task.model';
         <input type="text" nz-input [(ngModel)]="inputValue"/>
       </nz-input-group>
       <ng-template #addOnBeforeTemplate>
-        <nz-select [(ngModel)]="selectTask" style="width: 100px" nzPlaceHolder="选择任务"
+        <nz-select [(ngModel)]="id" style="width: 100px" nzPlaceHolder="选择任务"
                    (ngModelChange)="slectChange($event)">
           <nz-option *ngFor="let task of tasks"
                      [nzLabel]="task.id"
@@ -26,20 +27,20 @@ import {TaskModel} from '../task.model';
 })
 export class TaskConfigComponent implements OnInit {
   @Input() tasks: TaskModel[];
-  selectTask: TaskModel;
+  id: number;
   inputValue: string;
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
   }
 
   saveTitle(inputValue: string) {
-    
+    this.taskService.setTitle({id: this.id, title: this.inputValue} as TaskModel);
   }
 
   slectChange($event: any) {
     console.log($event)
-    this.inputValue = this.selectTask.title;
+    this.inputValue = this.tasks.find(it => it.id === $event).title;
   }
 }
