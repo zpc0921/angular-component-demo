@@ -24,7 +24,7 @@ export class LuckyGridComponent implements OnInit {
       this.luckyCol.lucky = false;
       this.luckyCol.opened = false;
       this.luckyCol.luckyNumber = 0;
-      // this.cd.markForCheck();
+      this.cd.markForCheck();
       console.log(`${this.luckyCol.index}col mark for check`);
     });
   }
