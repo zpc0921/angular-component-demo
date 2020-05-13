@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TaskModel} from '../task.model';
-import {TaskService} from '../task.service';
-import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-task-card',
@@ -10,7 +8,7 @@ import {filter} from 'rxjs/operators';
              [nzTitle]="task.title"
              [nzExtra]="extraTemplate">
       <ng-template #extraTemplate>
-        <nz-tag nzColor="{{task.status | optionsPipe: 'color'}}">{{task.status | optionsPipe: 'label'}}</nz-tag>
+        <nz-tag nzColor="{{'red'}}">{{'已完成'}}</nz-tag>
       </ng-template>
       {{task.subTitle}}
     </nz-card>
@@ -20,14 +18,10 @@ import {filter} from 'rxjs/operators';
 export class TaskCardComponent implements OnInit {
   @Input() task: TaskModel;
 
-  constructor(private taskService: TaskService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.taskService.titleChange$
-      .pipe(filter((res: TaskModel) => !!res && res.id === this.task.id) )
-      .subscribe(res => {
-      this.task.title = res.title;
-    });
+
   }
 
 }

@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TaskModel} from '../task.model';
-import {TaskService} from '../task.service';
 
 @Component({
   selector: 'app-task-config',
@@ -30,13 +29,12 @@ export class TaskConfigComponent implements OnInit {
   id: number;
   inputValue: string;
 
-  constructor(private taskService: TaskService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   saveTitle(inputValue: string) {
-    this.taskService.setTitle({id: this.id, title: this.inputValue} as TaskModel);
   }
 
   slectChange($event: any) {
