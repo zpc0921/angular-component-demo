@@ -16,6 +16,11 @@ import {TaskConfigComponent} from './todo-tasks/task-config/task-config.componen
 import {LuckyGridComponent} from './find-lucky/lucky-grid/lucky-grid.component';
 import {FindLuckyComponent} from './find-lucky/find-lucky.component';
 import {TestChangeElementColorDirectiveComponent} from './components/test-change-element-color-directive/test-change-element-color-directive.component';
+import { LifeComponent } from './life/life.component';
+import { LifecircleComponent } from './life/lifecircle/lifecircle.component';
+import { InteractionComponent } from './interaction/interaction.component';
+import { InterComponent } from './interaction/inter/inter.component';
+import { ChildComponent } from './interaction/child/child.component';
 
 registerLocaleData(zh);
 
@@ -30,6 +35,11 @@ registerLocaleData(zh);
     TaskConfigComponent,
     LuckyGridComponent,
     FindLuckyComponent,
+    LifeComponent,
+    LifecircleComponent,
+    InteractionComponent,
+    InterComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,

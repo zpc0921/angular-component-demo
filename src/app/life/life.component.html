@@ -1,0 +1,6 @@
+<app-lifecircle *ngIf="display"
+                [obj]="obj"
+                msg="parentString"></app-lifecircle>
+<p>父组件区</p>
+<button (click)="add()">加1</button>
+<button (click)="display = false">销毁</button>

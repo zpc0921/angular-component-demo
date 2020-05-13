@@ -3,12 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import {TodoTasksComponent} from './todo-tasks/todo-tasks.component';
 import {FindLuckyComponent} from './find-lucky/find-lucky.component';
 import {TestChangeElementColorDirectiveComponent} from './components/test-change-element-color-directive/test-change-element-color-directive.component';
+import {LifeComponent} from './life/life.component';
+import {InteractionComponent} from './interaction/interaction.component';
 
 
 const routes: Routes = [
-  {path: 'todo-tasks', component: TodoTasksComponent},
+  {path: 'pipe', component: TodoTasksComponent},
+  {path: 'life', component: LifeComponent},
   {path: 'find-lucky', component: FindLuckyComponent},
-  {path: 'test-directive', component: TestChangeElementColorDirectiveComponent},
+  {path: 'interaction', component: InteractionComponent},
+  {path: 'directive', component: TestChangeElementColorDirectiveComponent},
 ];
 
 @NgModule({
