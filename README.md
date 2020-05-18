@@ -30,6 +30,10 @@
 - route: /find-lucky
 ****
 - 初始化3000个表格框，类似于扫雷框；
-- find-lucky组件中实现初始化功能，展示分数以及restart按钮，已实现；
-- lucky-grid中展示每个幸运框的控制
+- find-lucky进行初始化
+- lucky-grid中展示每个幸运框的控制，
+实现点击未打开的控制框时，根据lucky标志生成'囧''，或幸运数；
+- 不同的幸运数展示不同的颜色，0-3展示red，4-7展示green，8-10展示blue；cd
 - lucky-grid打开时，如果是lucky，随机生成一个lucky数字，否则显示'囧'字；
+- find-lucky组件中增加展示分数；
+- find-lucky支持restart功能；

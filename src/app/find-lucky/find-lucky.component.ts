@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import {LuckyCol} from './lucky-col.model';
 import {GameNotifyService} from './game-notify.service';
 
@@ -8,7 +8,7 @@ import {GameNotifyService} from './game-notify.service';
   providers: [GameNotifyService],
   styleUrls: ['./find-lucky.component.scss']
 })
-export class FindLuckyComponent implements OnInit {
+export class FindLuckyComponent implements OnInit, AfterViewChecked {
   cols: LuckyCol[] = [];
   config = {
     totalNumber: 10,
@@ -27,6 +27,10 @@ export class FindLuckyComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewChecked(): void {
+    console.log('parent view checked');
   }
 
   isLucky() {

@@ -20,6 +20,7 @@ import {LifecircleComponent} from './life/lifecircle/lifecircle.component';
 import {InteractionComponent} from './interaction/interaction.component';
 import {InterComponent} from './interaction/inter/inter.component';
 import {ChildComponent} from './interaction/child/child.component';
+import { RenderGridColorDirective } from './find-lucky/render-grid-color.directive';
 
 registerLocaleData(zh);
 
@@ -38,6 +39,7 @@ registerLocaleData(zh);
     InteractionComponent,
     InterComponent,
     ChildComponent,
+    RenderGridColorDirective,
   ],
   imports: [
     BrowserModule,
