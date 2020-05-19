@@ -21,6 +21,7 @@ import {InteractionComponent} from './interaction/interaction.component';
 import {InterComponent} from './interaction/inter/inter.component';
 import {ChildComponent} from './interaction/child/child.component';
 import { RenderGridColorDirective } from './find-lucky/render-grid-color.directive';
+import { FindLuckyPracticeComponent } from './find-lucky-practice/find-lucky-practice.component';
 
 registerLocaleData(zh);
 
@@ -40,6 +41,7 @@ registerLocaleData(zh);
     InterComponent,
     ChildComponent,
     RenderGridColorDirective,
+    FindLuckyPracticeComponent,
   ],
   imports: [
     BrowserModule,

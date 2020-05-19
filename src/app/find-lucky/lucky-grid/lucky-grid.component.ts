@@ -21,7 +21,7 @@ export class LuckyGridComponent implements OnInit {
     this.gameNotifyService.$notifyRestart.pipe(
       filter(() => this.luckyCol.opened)
     ).subscribe(() => {
-      this.luckyCol.lucky = false;
+      this.luckyCol.lucky = Math.random() > Math.random();
       this.luckyCol.opened = false;
       this.luckyCol.luckyNumber = 0;
       // this.cd.markForCheck();
